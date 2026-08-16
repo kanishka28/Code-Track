@@ -1,0 +1,17 @@
+# Database backups
+*.sql
+
+# Environment files
+.env
+*.env
+
+# Node dependencies
+node_modules/
+
+# Frontend build output
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
