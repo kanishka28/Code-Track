@@ -1,0 +1,79 @@
+.problem-table-container {
+
+    width: 100%;
+
+    background: #111827;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border: 1px solid #1e293b;
+
+}
+
+
+
+.problem-table-header {
+
+    display: grid;
+
+    grid-template-columns:
+        80px
+        1fr
+        140px
+        130px
+        130px
+        160px
+        80px
+        150px;
+
+    padding: 16px 20px;
+
+    background: #1e293b;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* CodeTrack Buddy header */
+
+.problem-table-header div:last-child {
+
+    text-align: center;
+
+}
+
+
+
+@media(max-width:900px) {
+
+    .problem-table-header {
+
+        grid-template-columns:
+            60px
+            1fr
+            100px;
+
+    }
+
+
+    .problem-table-header div:nth-child(4),
+    .problem-table-header div:nth-child(5),
+    .problem-table-header div:nth-child(6),
+    .problem-table-header div:nth-child(7),
+    .problem-table-header div:nth-child(8) {
+
+        display: none;
+
+    }
+
+}

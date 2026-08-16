@@ -1,0 +1,165 @@
+.platform-section{
+
+    margin-top:28px;
+
+}
+
+.platform-section h2{
+
+    color:#F8FAFC;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.platform-section p{
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    margin-bottom:24px;
+
+}
+
+.platform-grid{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:space-between;
+
+}
+
+.platform-card{
+
+    flex:1;
+
+    background:#1E293B;
+
+    border:1px solid #334155;
+
+    border-radius:18px;
+
+    padding:24px 18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+.platform-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563EB;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+}
+
+.platform-icon{
+
+    width:48px;
+
+    height:48px;
+
+    object-fit:contain;
+
+}
+
+/* Platform Colors */
+
+.leetcode{
+
+    color:#FFA116;
+
+}
+
+.codeforces{
+
+    color:#4F8EF7;
+
+}
+
+.codechef{
+
+    color:#8B5E3C;
+
+}
+
+.atcoder{
+
+    color:#60A5FA;
+
+}
+
+.cses{
+
+    color:#2979FF;
+
+}
+
+.gfg{
+
+    color:#14A44D;
+
+}
+
+.platform-card h3{
+
+    color:white;
+
+    font-size:17px;
+
+    margin:0;
+
+    text-align:center;
+
+}
+
+.platform-card span{
+
+    color:#94A3B8;
+
+    font-size:13px;
+
+    text-align:center;
+
+}
+
+@media(max-width:1200px){
+
+.platform-grid{
+
+overflow-x:auto;
+
+padding-bottom:8px;
+
+}
+
+.platform-card{
+
+min-width:180px;
+
+}
+
+}

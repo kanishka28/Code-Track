@@ -1,0 +1,280 @@
+.login-page {
+  --ct-bg: #0b1220;
+  --ct-surface: #0f172a;
+  --ct-surface-raised: #131e33;
+  --ct-border: #1e293b;
+  --ct-text: #f8fafc;
+  --ct-text-muted: #94a3b8;
+  --ct-accent: #3b82f6;
+  --ct-accent-dim: #2563eb;
+  --ct-error: #f87171;
+  --ct-yellow: #f5c451;
+  --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ct-bg);
+  padding: 24px;
+  overflow: hidden;
+}
+
+.login-page__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 75%);
+  pointer-events: none;
+}
+
+.terminal-window {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: var(--ct-surface);
+  border: 1px solid var(--ct-border);
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.05),
+    0 30px 80px -20px rgba(0, 0, 0, 0.7),
+    0 0 60px -15px rgba(59, 130, 246, 0.1);
+  overflow: hidden;
+  animation: terminal-in 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes terminal-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.terminal-window__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: var(--ct-surface-raised);
+  border-bottom: 1px solid var(--ct-border);
+}
+
+.terminal-window__dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+.dot--red { background: #ff5f56; }
+.dot--yellow { background: #ffbd2e; }
+.dot--green { background: #27c93f; }
+
+.terminal-window__tab {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ct-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.terminal-window__body {
+  padding: 36px 32px 28px;
+}
+
+.terminal-brand {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ct-text);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.terminal-brand__bracket {
+  color: var(--ct-accent);
+  font-weight: 500;
+}
+
+.terminal-subtext {
+  margin: 10px 0 28px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ct-text-muted);
+  max-width: 34ch;
+}
+
+.terminal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terminal-line {
+  font-family: var(--mono);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-line--label {
+  color: var(--ct-text-muted);
+  cursor: text;
+}
+
+.terminal-line--error { color: var(--ct-error); }
+.terminal-line--success { color: var(--ct-accent); }
+.terminal-line--muted { color: var(--ct-text-muted); }
+
+.terminal-prompt {
+  color: var(--ct-accent-dim);
+  font-weight: 600;
+}
+.terminal-prompt--error { color: var(--ct-error); }
+.terminal-prompt--success { color: var(--ct-accent); }
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--ct-bg);
+  border: 1px solid var(--ct-border);
+  border-radius: 7px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.terminal-input-row:focus-within {
+  border-color: var(--ct-accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.terminal-input-row.is-busy {
+  opacity: 0.6;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ct-text);
+  caret-color: var(--ct-accent);
+}
+
+.terminal-input::placeholder {
+  color: #3a4150;
+}
+
+/* Chrome/Edge force a white background + black text on autofilled inputs,
+   overriding normal CSS. This trick pushes a huge inset shadow of our own
+   background color underneath the autofill styling to cancel it out. */
+.terminal-input:-webkit-autofill,
+.terminal-input:-webkit-autofill:hover,
+.terminal-input:-webkit-autofill:focus,
+.terminal-input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--ct-text) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--ct-bg) inset !important;
+  box-shadow: 0 0 0 1000px var(--ct-bg) inset !important;
+  caret-color: var(--ct-accent);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.terminal-cursor {
+  width: 7px;
+  height: 15px;
+  background: var(--ct-accent);
+  animation: blink 1s step-end infinite;
+  flex-shrink: 0;
+}
+
+.terminal-input:focus ~ .terminal-cursor,
+.terminal-input:not(:placeholder-shown) ~ .terminal-cursor {
+  display: none;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.terminal-dots span {
+  animation: dots-fade 1.2s infinite;
+  opacity: 0.2;
+}
+.terminal-dots span:nth-child(1) { animation-delay: 0s; }
+.terminal-dots span:nth-child(2) { animation-delay: 0.2s; }
+.terminal-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dots-fade {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.terminal-submit {
+  margin-top: 10px;
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ct-bg);
+  background: var(--ct-accent);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.terminal-submit:hover:not(:disabled) {
+  box-shadow: 0 0 24px -4px rgba(59, 130, 246, 0.55);
+  transform: translateY(-1px);
+}
+
+.terminal-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.terminal-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.terminal-footnote {
+  margin-top: 22px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ct-text-muted);
+  opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-window,
+  .terminal-cursor,
+  .terminal-dots span,
+  .terminal-submit {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-window__body {
+    padding: 28px 22px 22px;
+  }
+  .terminal-brand {
+    font-size: 22px;
+  }
+}

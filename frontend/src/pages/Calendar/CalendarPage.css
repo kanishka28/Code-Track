@@ -1,0 +1,686 @@
+.calendar-page {
+    padding: 18px 24px 20px;
+    height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.page-header {
+    margin-bottom: 16px;
+    flex-shrink: 0;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.page-header p {
+    color: #94A3B8;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.calendar-layout {
+    flex: 1;
+    display: flex;
+    gap: 18px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+
+.calendar-sidebar {
+    width: 330px;
+    flex-shrink: 0;
+
+    background: #1E293B;
+    border-radius: 16px;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    min-height: 0;
+}
+
+
+/* =========================================================
+   SEARCH + FILTER
+========================================================= */
+
+.search-filter-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+}
+
+.search-filter-row input {
+    flex: 1;
+    min-width: 0;
+
+    height: 42px;
+
+    border-radius: 10px;
+    border: 1px solid #334155;
+
+    background: #0F172A;
+    color: white;
+
+    padding: 0 14px;
+    font-size: 14px;
+
+    outline: none;
+}
+
+.search-filter-row input::placeholder {
+    color: #94A3B8;
+}
+
+.platform-filter {
+    height: 42px;
+    padding: 0 10px;
+
+    border-radius: 10px;
+    border: 1px solid #334155;
+
+    background: #0F172A;
+    color: white;
+
+    font-size: 13px;
+
+    outline: none;
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+.platform-filter option {
+    background: #1E293B;
+}
+
+
+/* =========================================================
+   CONTEST SECTIONS
+========================================================= */
+
+.contest-section {
+    margin-bottom: 22px;
+    flex-shrink: 0;
+}
+
+.contest-section h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.empty-message {
+    color: #64748B;
+    font-size: 13px;
+    padding: 6px 0;
+}
+
+.error-message {
+    color: #F87171;
+    font-size: 13px;
+    padding: 6px 0;
+}
+
+
+/* =========================================================
+   RIGHT CALENDAR CONTAINER
+========================================================= */
+
+.calendar-container {
+    flex: 1;
+
+    background: #1E293B;
+    border-radius: 16px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CALENDAR HEADER
+========================================================= */
+
+.calendar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    flex-shrink: 0;
+}
+
+.calendar-top h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.calendar-nav button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #334155;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.calendar-nav button:hover {
+    background: #2563EB;
+}
+
+
+/* =========================================================
+   CALENDAR SCROLL AREA
+========================================================= */
+
+.calendar-container .calendar-grid-wrapper {
+    flex: 1;
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    border-radius: 14px;
+}
+
+
+/* Scrollbar */
+
+.calendar-container .calendar-grid-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.calendar-container .calendar-grid-wrapper::-webkit-scrollbar-track {
+    background: #0F172A;
+    border-radius: 10px;
+}
+
+.calendar-container .calendar-grid-wrapper::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 10px;
+}
+
+.calendar-container .calendar-grid-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #64748B;
+}
+
+
+/* =========================================================
+   REACT BIG CALENDAR
+========================================================= */
+
+.calendar-container .rbc-calendar {
+    width: 100%;
+    min-width: 700px;
+
+    background: transparent;
+    color: #FFFFFF;
+
+    font-family: inherit;
+
+    /*
+       Do NOT squeeze the entire month into the viewport.
+       The wrapper above will scroll vertically.
+    */
+    height: auto !important;
+    min-height: 900px;
+}
+
+
+/* Hide default toolbar */
+
+.calendar-container .rbc-toolbar {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MONTH VIEW
+========================================================= */
+
+.calendar-container .rbc-month-view {
+    width: 100%;
+
+    border: none !important;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #1E293B;
+}
+
+
+/* =========================================================
+   WEEKDAY HEADER
+========================================================= */
+
+.calendar-container .rbc-month-header {
+    min-height: 48px;
+}
+
+.calendar-container .rbc-header {
+    background: #0F172A;
+
+    color: #CBD5E1;
+
+    padding: 14px 0;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border: none !important;
+    border-bottom: 1px solid #334155 !important;
+}
+
+
+/* =========================================================
+   WEEK ROWS
+========================================================= */
+
+/*
+   Each week is now 145px tall.
+
+   This is the main change.
+
+   It gives enough space for several contest pills
+   inside each date instead of compressing everything.
+*/
+
+.calendar-container .rbc-month-row {
+    min-height: 145px !important;
+    height: 145px !important;
+
+    flex: none !important;
+
+    border-top: 1px solid #334155 !important;
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   DAY BACKGROUNDS
+========================================================= */
+
+.calendar-container .rbc-day-bg {
+    background: #1E293B;
+
+    border-left: 1px solid #334155 !important;
+
+    transition: background 0.2s ease;
+}
+
+.calendar-container .rbc-day-bg:hover {
+    background: #243244;
+}
+
+
+/* Weekend */
+
+.calendar-container .rbc-day-bg:nth-child(7n),
+.calendar-container .rbc-day-bg:nth-child(7n-1) {
+    background: #1A2538;
+}
+
+
+/* Previous / next month */
+
+.calendar-container .rbc-off-range-bg {
+    background: #182235 !important;
+}
+
+.calendar-container .rbc-off-range .rbc-button-link {
+    color: #64748B !important;
+}
+
+
+/* =========================================================
+   DATE NUMBER
+========================================================= */
+
+.calendar-container .rbc-date-cell {
+    padding: 8px 10px;
+
+    text-align: right;
+
+    border: none !important;
+
+    position: relative;
+    z-index: 5;
+}
+
+.calendar-container .rbc-date-cell button,
+.calendar-container .rbc-date-cell a {
+    color: #FFFFFF !important;
+
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+.calendar-container .rbc-today {
+    background: rgba(37, 99, 235, 0.15) !important;
+
+    box-shadow: inset 0 0 0 2px #2563EB;
+}
+
+
+/* =========================================================
+   EVENT AREA
+========================================================= */
+
+.calendar-container .rbc-row-content {
+    position: relative;
+    z-index: 3;
+
+    padding-top: 2px;
+}
+
+.calendar-container .rbc-row-segment {
+    padding: 0 2px 3px 2px !important;
+}
+
+
+/* =========================================================
+   CONTEST PILLS
+========================================================= */
+
+.calendar-container .rbc-event {
+    min-height: 26px;
+
+    height: auto;
+
+    margin: 2px 2px;
+
+    padding: 4px 9px !important;
+
+    border-radius: 999px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+
+    box-shadow: none !important;
+
+    font-size: 11px !important;
+    font-weight: 600;
+
+    line-height: 16px;
+
+    color: #FFFFFF !important;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
+}
+
+
+/* Contest title */
+
+.calendar-container .rbc-event-content {
+    display: block;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    line-height: 16px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* Hover */
+
+.calendar-container .rbc-event:hover {
+    filter: brightness(1.12);
+
+    transform: translateY(-1px);
+
+    z-index: 20;
+}
+
+
+/* Selected */
+
+.calendar-container .rbc-selected {
+    background: #1D4ED8 !important;
+}
+
+
+/* =========================================================
+   MULTI-DAY CONTESTS
+========================================================= */
+
+.calendar-container .rbc-event.rbc-event-continues-prior,
+.calendar-container .rbc-event.rbc-event-continues-after {
+    border-radius: 999px !important;
+}
+
+
+/* =========================================================
+   +N MORE
+========================================================= */
+
+.calendar-container .rbc-show-more {
+    display: block;
+
+    color: #60A5FA !important;
+
+    font-size: 11px !important;
+    font-weight: 600;
+
+    padding: 2px 6px;
+
+    margin-top: 2px;
+
+    cursor: pointer;
+}
+
+.calendar-container .rbc-show-more:hover {
+    color: #93C5FD !important;
+}
+
+
+/* =========================================================
+   MORE-EVENT POPUP
+========================================================= */
+
+.calendar-container .rbc-overlay {
+    background: #1E293B !important;
+
+    border: 1px solid #334155 !important;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    padding: 8px;
+
+    color: white;
+
+    z-index: 100;
+}
+
+.calendar-container .rbc-overlay-header {
+    color: #CBD5E1;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid #334155;
+
+    padding: 6px 8px;
+
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   REMOVE DEFAULT BORDERS / FOCUS
+========================================================= */
+
+.calendar-container .rbc-time-header-content,
+.calendar-container .rbc-time-content,
+.calendar-container .rbc-row-bg,
+.calendar-container .rbc-row,
+.calendar-container .rbc-date-cell {
+    border: none !important;
+}
+
+.calendar-container .rbc-button-link {
+    outline: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .calendar-sidebar {
+        width: 290px;
+    }
+
+    .calendar-top h2 {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .calendar-layout {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .calendar-sidebar {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .calendar-container {
+        min-height: 650px;
+    }
+
+    .calendar-container .rbc-month-row {
+        min-height: 135px !important;
+        height: 135px !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .calendar-page {
+        padding: 14px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .calendar-top h2 {
+        font-size: 24px;
+    }
+
+    .calendar-container {
+        padding: 12px;
+    }
+
+    .calendar-container .rbc-header {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+
+    .calendar-container .rbc-date-cell {
+        padding: 5px;
+    }
+
+    .calendar-container .rbc-date-cell button,
+    .calendar-container .rbc-date-cell a {
+        font-size: 12px;
+    }
+
+    .calendar-container .rbc-month-row {
+        min-height: 125px !important;
+        height: 125px !important;
+    }
+
+    .calendar-container .rbc-event {
+        min-height: 24px;
+        padding: 3px 6px !important;
+        font-size: 10px !important;
+    }
+
+    .calendar-container .rbc-event-content {
+        font-size: 10px;
+    }
+}

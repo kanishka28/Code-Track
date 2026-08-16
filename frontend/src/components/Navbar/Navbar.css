@@ -1,0 +1,155 @@
+/* ================= Navbar ================= */
+
+.navbar {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 32px;
+
+    background: #0F172A;
+
+    border-bottom: 1px solid #1E293B;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Left */
+
+.navbar-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-title span {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #F8FAFC;
+    letter-spacing: 0.3px;
+}
+
+/* Right */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Notification */
+
+.icon {
+    font-size: 20px;
+    color: #CBD5E1;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.icon:hover {
+    color: #3B82F6;
+    transform: translateY(-2px);
+}
+
+/* Profile */
+
+.navbar-profile {
+    position: relative;
+}
+
+.profile-icon {
+    font-size: 34px;
+    color: #3B82F6;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.08);
+}
+
+/* Dropdown */
+
+.navbar-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+
+    min-width: 240px;
+
+    background: #111c33;
+    border: 1px solid #1E293B;
+    border-radius: 10px;
+
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    animation: dropdown-in 150ms ease-out;
+    z-index: 200;
+}
+
+@keyframes dropdown-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar-dropdown__email {
+    font-size: 0.85rem;
+    color: #F8FAFC;
+    word-break: break-all;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1E293B;
+}
+
+.navbar-dropdown__logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: none;
+    border: none;
+
+    font-size: 0.85rem;
+    color: #CBD5E1;
+    cursor: pointer;
+
+    padding: 6px 4px;
+    border-radius: 6px;
+
+    transition: all .2s ease;
+}
+
+.navbar-dropdown__logout:hover {
+    color: #F87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:768px){
+
+    .navbar{
+        padding:0 18px;
+        height:60px;
+    }
+
+    .navbar-title span{
+        font-size:1rem;
+    }
+
+    .profile-icon{
+        font-size:30px;
+    }
+
+    .navbar-dropdown {
+        min-width: 200px;
+    }
+
+}

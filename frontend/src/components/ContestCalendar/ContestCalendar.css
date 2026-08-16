@@ -1,0 +1,32 @@
+.contest-layout {
+
+    display: flex;
+
+    gap: 30px;
+
+    height: calc(100vh - 180px);
+}
+
+.left-panel {
+
+    width: 360px;
+
+    background: #1E293B;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+.right-panel {
+
+    flex: 1;
+
+    background: #1E293B;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}

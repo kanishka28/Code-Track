@@ -1,0 +1,641 @@
+/* ============================================================
+   CODETRACK BUDDY
+============================================================ */
+
+.cses-buddy {
+
+    min-width: 150px;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+}
+
+
+.cses-buddy .buddy-button {
+
+    margin: 0 auto;
+
+}
+
+/* ============================================================
+   CSES PAGE
+============================================================ */
+
+.cses-page {
+    min-height: 100vh;
+    padding: 32px 40px;
+    background: #0f172a;
+    color: #e2e8f0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.cses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+    padding: 28px 30px;
+
+    background: #111c33;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+}
+
+
+.cses-header-info h1 {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #f8fafc;
+}
+
+
+.cses-header-info p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+
+/* ============================================================
+   PROBLEM COUNT
+============================================================ */
+
+.cses-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 110px;
+    padding: 14px 20px;
+
+    background: #1e293b;
+    border-radius: 10px;
+
+    border: 1px solid #334155;
+}
+
+
+.cses-count strong {
+    font-size: 24px;
+    color: #60a5fa;
+}
+
+
+.cses-count span {
+    margin-top: 2px;
+
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+
+/* ============================================================
+   TABLE CONTAINER
+============================================================ */
+
+.cses-table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #111c33;
+
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+}
+
+
+/* ============================================================
+   TABLE
+============================================================ */
+
+.cses-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   TABLE HEADER
+============================================================ */
+
+.cses-table thead {
+    background: #1e293b;
+}
+
+
+.cses-table th {
+    padding: 16px 18px;
+
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    color: #94a3b8;
+
+    border-bottom: 1px solid #334155;
+}
+
+
+/* ============================================================
+   TABLE ROW
+============================================================ */
+
+.cses-table tbody tr {
+    transition: background 0.15s ease;
+
+    border-bottom: 1px solid #1e293b;
+}
+
+
+.cses-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+
+.cses-table tbody tr:hover {
+    background: #17233b;
+}
+
+
+.cses-table td {
+    padding: 15px 18px;
+
+    color: #cbd5e1;
+
+    vertical-align: middle;
+}
+
+
+/* ============================================================
+   RANK
+============================================================ */
+
+.cses-rank {
+    width: 70px;
+
+    color: #64748b !important;
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   ID
+============================================================ */
+
+.cses-id {
+    width: 80px;
+
+    color: #94a3b8 !important;
+
+    font-family: monospace;
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.cses-title {
+    min-width: 260px;
+
+    color: #f1f5f9 !important;
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   CATEGORY
+============================================================ */
+
+.cses-category {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 6px;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   SOLVE LINK
+============================================================ */
+
+.cses-link {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border-radius: 6px;
+
+    background: #1d4ed8;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+.cses-link:hover {
+    background: #2563eb;
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   CODETRACK BUDDY
+============================================================ */
+
+.cses-buddy {
+    min-width: 70px;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* Center the Buddy header */
+
+.cses-buddy-header {
+    text-align: center !important;
+}
+
+
+/* Show only robot icon on CSES */
+
+.cses-buddy .buddy-button {
+    padding: 8px 10px;
+
+    min-width: 40px;
+
+    justify-content: center;
+}
+
+
+/* Hide Buddy text */
+
+.cses-buddy .buddy-button span:last-child {
+    display: none;
+}
+
+
+/* ============================================================
+   LOADING
+============================================================ */
+
+.cses-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 400px;
+
+    color: #94a3b8;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   ERROR
+============================================================ */
+
+.cses-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 400px;
+
+    color: #f87171;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   EMPTY
+============================================================ */
+
+.cses-empty {
+    padding: 50px !important;
+
+    text-align: center;
+
+    color: #64748b !important;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .cses-page {
+        padding: 20px;
+    }
+
+
+    .cses-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .cses-count {
+        align-self: stretch;
+    }
+
+
+    .cses-table {
+        min-width: 800px;
+    }
+
+}
+/* ============================================================
+   STATUS COLUMN (append to csesSheet.css)
+============================================================ */
+
+.cses-status-header {
+    text-align: center !important;
+    width: 60px;
+}
+
+.cses-status {
+    width: 60px;
+    text-align: center;
+}
+
+.cses-status input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3b82f6;
+}
+
+
+/* ============================================================
+   REVISION COLUMN
+============================================================ */
+
+.cses-revision-header {
+    text-align: center !important;
+    width: 80px;
+}
+
+.cses-revision {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    color: #facc15;
+    font-size: 16px;
+    transition: transform 0.15s ease;
+}
+
+.cses-revision:hover {
+    transform: scale(1.15);
+}
+/* ============================================================
+   Add these rules to csesSheet.css
+   (search bar + category dropdown row above the CSES table)
+   ============================================================ */
+
+.cses-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+
+.cses-search-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.cses-search-input:focus {
+    border-color: #6c63ff;
+}
+
+.cses-search-input::placeholder {
+    color: #888;
+}
+
+.cses-category-select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    min-width: 160px;
+    transition: border-color 0.2s ease;
+}
+
+.cses-category-select:focus {
+    border-color: #6c63ff;
+}
+
+/* ============================================================
+   Add these rules to csesSheet.css
+   (progress bar + search bar + category dropdown, single row)
+   ============================================================ */
+
+.cses-top-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0;
+    flex-wrap: nowrap;
+}
+
+/* Progressbar takes the remaining space; its own internal
+   width: 100% (from Progressbar.css) will fill this wrapper */
+.cses-progress-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+.cses-search-input {
+    flex: 0 0 200px;
+    width: 200px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.cses-search-input:focus {
+    border-color: #6c63ff;
+}
+
+.cses-search-input::placeholder {
+    color: #888;
+}
+
+.cses-category-select {
+    flex: 0 0 160px;
+    width: 160px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.cses-category-select:focus {
+    border-color: #6c63ff;
+}
+
+/* On narrow screens, let it wrap instead of squeezing */
+@media (max-width: 700px) {
+
+    .cses-top-row {
+        flex-wrap: wrap;
+    }
+
+    .cses-progress-wrapper {
+        flex-basis: 100%;
+    }
+
+}
+
+/* ============================================================
+   Add these rules to csesSheet.css
+   (search + dropdown on the left, progress bar on the right)
+   ============================================================ */
+
+.cses-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 16px 0;
+    flex-wrap: nowrap;
+}
+
+.cses-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+}
+
+.cses-search-input {
+    width: 200px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.cses-search-input:focus {
+    border-color: #6c63ff;
+}
+
+.cses-search-input::placeholder {
+    color: #888;
+}
+
+.cses-category-select {
+    width: 160px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #eee;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.cses-category-select:focus {
+    border-color: #6c63ff;
+}
+
+/* Progress bar sits on the right, takes remaining space */
+.cses-progress-wrapper {
+    flex: 1;
+    min-width: 0;
+    max-width: 420px;
+}
+
+/* On narrow screens, stack instead of squeezing */
+@media (max-width: 700px) {
+
+    .cses-top-row {
+        flex-wrap: wrap;
+    }
+
+    .cses-filters,
+    .cses-progress-wrapper {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+}

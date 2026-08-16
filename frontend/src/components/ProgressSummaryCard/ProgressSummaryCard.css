@@ -1,0 +1,62 @@
+.progress-summary-card {
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    border-radius: 12px;
+    padding: 24px;
+    color: #F8FAFC;
+}
+
+.progress-summary-card.loading {
+    color: #94A3B8;
+    font-size: 0.9rem;
+}
+
+.progress-summary-card h3 {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.progress-summary-total {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.progress-summary-number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #3B82F6;
+}
+
+.progress-summary-label {
+    font-size: 0.85rem;
+    color: #94A3B8;
+}
+
+.progress-summary-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid #1E293B;
+}
+
+.progress-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #CBD5E1;
+}
+
+.progress-summary-row strong {
+    color: #F8FAFC;
+}
+
+.progress-summary-revision {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: #FACC15;
+}

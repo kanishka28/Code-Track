@@ -1,0 +1,65 @@
+.contest-card{
+
+    display: block;
+    text-decoration: none;
+    background:#273449;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    transition:.25s;
+
+    cursor:pointer;
+}
+
+.contest-card:hover{
+
+    background:#334155;
+
+    transform:translateY(-2px);
+}
+
+.platform{
+
+    display:inline-block;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:11px;
+
+    padding:4px 10px;
+
+    border-radius:999px;
+
+    margin-bottom:10px;
+}
+
+.contest-card h4{
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.contest-card p{
+
+    color:#CBD5E1;
+
+    font-size:13px;
+
+    margin-bottom:4px;
+}
+
+.contest-card span{
+
+    color:#94A3B8;
+
+    font-size:12px;
+}

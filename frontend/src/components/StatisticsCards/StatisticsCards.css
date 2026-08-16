@@ -1,0 +1,147 @@
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:12px;
+
+    flex:1;
+
+}
+
+/* ---------------- Card ---------------- */
+
+.stat-card{
+
+    min-width:0;
+
+    height:86px;
+
+    padding:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#1B2235;
+
+    border:1px solid #30384d;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#3b82f6;
+
+    box-shadow:0 8px 18px rgba(59,130,246,.15);
+
+}
+
+/* ---------------- Icon ---------------- */
+
+.stat-icon{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
+}
+
+/* Restore colours */
+
+.total{
+
+    background:#1E3A5F;
+
+    color:#60A5FA;
+
+}
+
+.solved-icon{
+
+    background:#173B2B;
+
+    color:#22C55E;
+
+}
+
+.revision-icon{
+
+    background:#4A3B0A;
+
+    color:#FACC15;
+
+}
+
+.remaining-icon{
+
+    background:#312E81;
+
+    color:#818CF8;
+
+}
+
+/* ---------------- Text ---------------- */
+
+.stat-card h3{
+
+    margin:0;
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+.stat-card p{
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    color:#94A3B8;
+
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media(max-width:1100px){
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

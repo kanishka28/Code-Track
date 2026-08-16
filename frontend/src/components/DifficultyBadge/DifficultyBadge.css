@@ -1,0 +1,52 @@
+.difficulty-badge {
+
+
+    padding:5px 12px;
+
+
+    border-radius:20px;
+
+
+    font-size:12px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+.easy {
+
+
+    background:#064e3b;
+
+    color:#34d399;
+
+
+}
+
+
+
+.medium {
+
+
+    background:#78350f;
+
+    color:#fbbf24;
+
+
+}
+
+
+
+.hard {
+
+
+    background:#7f1d1d;
+
+    color:#f87171;
+
+
+}

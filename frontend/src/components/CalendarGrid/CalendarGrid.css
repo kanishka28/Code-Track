@@ -1,0 +1,509 @@
+/* =========================================================
+   CODETRACK CALENDAR
+   ========================================================= */
+
+/* ---------- Main calendar wrapper ---------- */
+
+.calendar-grid-wrapper {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    border-radius: 14px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #0F172A;
+}
+
+
+/* =========================================================
+   REACT BIG CALENDAR
+   ========================================================= */
+
+.rbc-calendar {
+    width: 100%;
+    min-width: 700px;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.rbc-toolbar {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MONTH VIEW
+   ========================================================= */
+
+.rbc-month-view {
+
+    width: 100%;
+
+    border: 1px solid #334155 !important;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #1E293B;
+}
+
+
+/* =========================================================
+   WEEKDAY HEADER
+   ========================================================= */
+
+.rbc-header {
+
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #0F172A;
+
+    color: #CBD5E1;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    border: none !important;
+
+    border-bottom: 1px solid #334155 !important;
+}
+
+
+/* =========================================================
+   WEEK ROWS
+   ========================================================= */
+
+/*
+ * IMPORTANT
+ *
+ * Make every week tall enough to contain several
+ * contest pills.
+ *
+ * The calendar wrapper itself can scroll vertically,
+ * so the last 1–2 rows remain accessible.
+ */
+
+.rbc-month-row {
+
+    min-height: 170px !important;
+
+    height: 170px !important;
+
+    flex: 0 0 170px !important;
+
+    border-top: 1px solid #334155 !important;
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   DAY BACKGROUNDS
+   ========================================================= */
+
+.rbc-day-bg {
+
+    background: #1E293B;
+
+    border-left: 1px solid #334155 !important;
+
+    transition: background 0.2s ease;
+}
+
+
+.rbc-day-bg:hover {
+
+    background: #243244;
+}
+
+
+/* Weekend */
+
+.rbc-day-bg:nth-child(7n),
+.rbc-day-bg:nth-child(7n-1) {
+
+    background: #1A2538;
+}
+
+
+/* Previous / next month */
+
+.rbc-off-range-bg {
+
+    background: #182235 !important;
+}
+
+
+.rbc-off-range {
+
+    color: #64748B !important;
+}
+
+
+.rbc-off-range .rbc-button-link {
+
+    color: #64748B !important;
+}
+
+
+/* =========================================================
+   DATE NUMBER
+   ========================================================= */
+
+.rbc-date-cell {
+
+    height: 32px;
+
+    padding: 7px 9px;
+
+    text-align: right;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.rbc-date-cell button,
+.rbc-date-cell a {
+
+    color: #ffffff !important;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   TODAY
+   ========================================================= */
+
+.rbc-today {
+
+    background: rgba(37, 99, 235, 0.12) !important;
+
+    box-shadow:
+        inset 0 0 0 2px #2563EB;
+}
+
+
+/* =========================================================
+   EVENT AREA
+   ========================================================= */
+
+.rbc-row-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    padding-top: 3px;
+
+    overflow: hidden !important;
+}
+
+
+.rbc-row-content-scroll-container {
+
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   EVENT ROW
+   ========================================================= */
+
+/*
+ * Every contest gets its own small row.
+ *
+ * This is what makes the calendar resemble the
+ * reference screenshot instead of showing giant bars.
+ */
+
+.rbc-row-segment {
+
+    padding: 2px 3px !important;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTEST PILL
+   ========================================================= */
+
+.rbc-event {
+
+    min-height: 25px !important;
+
+    height: 25px !important;
+
+    margin: 0 !important;
+
+    padding: 3px 8px !important;
+
+    border-radius: 999px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+
+    box-shadow: none !important;
+
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 17px !important;
+
+    overflow: hidden !important;
+
+    white-space: nowrap !important;
+
+    text-overflow: ellipsis !important;
+
+    cursor: pointer;
+
+    transition:
+        filter 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+/* Contest hover */
+
+.rbc-event:hover {
+
+    filter: brightness(1.12);
+
+    transform: translateY(-1px);
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   CONTEST TEXT
+   ========================================================= */
+
+.rbc-event-content {
+
+    display: block;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    line-height: 17px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/*
+ * Custom event component created in CalendarGrid.jsx
+ */
+
+.calendar-contest-event {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    line-height: 17px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   REMOVE MULTI-DAY VISUAL BEHAVIOR
+   ========================================================= */
+
+/*
+ * These rules are mostly defensive.
+ *
+ * CalendarGrid.jsx already converts every contest into
+ * a single-day event.
+ */
+
+.rbc-event.rbc-event-continues-earlier,
+.rbc-event.rbc-event-continues-later {
+
+    border-radius: 999px !important;
+}
+
+
+/* =========================================================
+   SELECTED EVENT
+   ========================================================= */
+
+.rbc-event.rbc-selected {
+
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.25) !important;
+}
+
+
+/* =========================================================
+   + MORE
+   ========================================================= */
+
+.rbc-show-more {
+
+    display: block;
+
+    color: #60A5FA !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600;
+
+    padding: 2px 6px;
+
+    margin-top: 2px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+
+.rbc-show-more:hover {
+
+    color: #93C5FD !important;
+}
+
+
+/* =========================================================
+   OVERFLOW POPUP
+   ========================================================= */
+
+.rbc-overlay {
+
+    background: #1E293B !important;
+
+    border: 1px solid #334155 !important;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
+    padding: 8px;
+
+    color: #ffffff;
+
+    z-index: 100;
+}
+
+
+.rbc-overlay-header {
+
+    color: #CBD5E1;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid #334155;
+
+    padding: 6px 8px;
+
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   BUTTONS / FOCUS
+   ========================================================= */
+
+.rbc-button-link {
+
+    outline: none !important;
+}
+
+
+.rbc-button-link:focus {
+
+    outline: none !important;
+}
+
+
+/* =========================================================
+   CALENDAR SCROLLBAR
+   ========================================================= */
+
+.calendar-grid-wrapper::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+
+.calendar-grid-wrapper::-webkit-scrollbar-track {
+
+    background: #0F172A;
+
+    border-radius: 10px;
+}
+
+
+.calendar-grid-wrapper::-webkit-scrollbar-thumb {
+
+    background: #334155;
+
+    border-radius: 10px;
+}
+
+
+.calendar-grid-wrapper::-webkit-scrollbar-thumb:hover {
+
+    background: #475569;
+}
+
+
+/* =========================================================
+   SMOOTH TRANSITIONS
+   ========================================================= */
+
+.rbc-day-bg {
+
+    transition: background 0.2s ease;
+}

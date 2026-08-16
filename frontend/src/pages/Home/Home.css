@@ -1,0 +1,144 @@
+/* ================= Global ================= */
+
+body{
+    margin:0;
+    background:#0F172A;
+    font-family:Inter, Arial, Helvetica, sans-serif;
+    color:#F8FAFC;
+    overflow-x:hidden;
+}
+
+/* ================= Layout ================= */
+
+.home-container{
+    display:flex;
+    min-height:100vh;
+    background:#0F172A;
+}
+
+.home-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+}
+
+/* ================= Main ================= */
+
+.home-main{
+
+    flex:1;
+
+    position:relative;
+
+    padding:24px 32px 18px;
+
+    overflow-x:hidden;
+
+}
+
+/* Background Glow */
+
+.home-main::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-180px;
+
+    left:10%;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(59,130,246,.22),
+        transparent 65%);
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+/* Every section above glow */
+
+.home-main>*{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ================= Sections ================= */
+
+.hero-section{
+
+    margin-bottom:32px;
+
+}
+
+.features-section{
+
+    margin-bottom:30px;
+
+}
+
+.platform-section{
+
+    margin-bottom:16px;
+
+}
+
+/* ================= Cards ================= */
+
+.glass-card{
+
+    background:rgba(30,41,59,.65);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid #334155;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.18);
+
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:1200px){
+
+    .home-main{
+
+        padding:22px;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .home-main{
+
+        padding:18px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .home-main{
+
+        padding:16px;
+
+    }
+
+}

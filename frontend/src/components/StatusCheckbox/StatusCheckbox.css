@@ -1,0 +1,55 @@
+.status-checkbox{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    border:2px solid #5f6f88;
+
+    background:#182235;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    position:relative;
+
+}
+
+.status-checkbox:hover{
+
+    border-color:#3b82f6;
+
+}
+
+.status-checkbox:checked{
+
+    background:#22c55e;
+
+    border-color:#22c55e;
+
+}
+
+.status-checkbox:checked::after{
+
+    content:"✓";
+
+    color:white;
+
+    position:absolute;
+
+    left:5px;
+
+    top:0px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}

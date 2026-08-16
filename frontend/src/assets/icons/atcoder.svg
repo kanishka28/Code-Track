@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- AtCoder logo: stylized "A" with arc -->
+  <path d="M12 2L3 20h3.5l1.5-3.5h8l1.5 3.5H21L12 2zm0 4.5l3 7H9l3-7z" fill="#222222"/>
+  <path d="M5 16.5 Q12 22 19 16.5" stroke="#222222" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+</svg>

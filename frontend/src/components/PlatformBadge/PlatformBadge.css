@@ -1,0 +1,47 @@
+.platform-badge {
+
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+
+    background: #1E293B;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: all 0.2s ease;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    padding: 6px;
+
+    box-sizing: border-box;
+
+}
+
+.platform-badge:hover {
+
+    background: #2563EB;
+
+    transform: translateY(-2px);
+
+}
+
+.platform-badge-icon {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+}
