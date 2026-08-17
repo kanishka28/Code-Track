@@ -19,11 +19,49 @@ function CodingSheetsPage() {
 
     const filters = [
         "All",
-        "Interview",
-        "Competitive Programming",
         "Beginner",
-        "Advanced"
+        "Interview",
+        "Competitive Programming"
     ];
+
+
+    // ============================================================
+    // SHEET -> CATEGORY MAPPING
+    // ============================================================
+    // Matched by id/name rather than a backend "category" field,
+    // since the backend sheets don't reliably carry one.
+    //
+    //   Beginner               -> Striver A2Z
+    //   Interview               -> Blind 75, NeetCode 150
+    //   Competitive Programming -> CSES
+    //
+    // Any sheet that doesn't match one of these (e.g. Love Babbar 450)
+    // simply won't show under a specific filter, only under "All".
+    // ============================================================
+
+    const getSheetCategory = (sheet) => {
+
+        const id = String(sheet.id || "").toLowerCase();
+        const name = String(sheet.name || "").toLowerCase();
+
+        if (id.includes("striver") || name.includes("striver")) {
+            return "Beginner";
+        }
+
+        if (
+            id.includes("blind") || name.includes("blind") ||
+            id.includes("neetcode") || name.includes("neetcode")
+        ) {
+            return "Interview";
+        }
+
+        if (id.includes("cses") || name.includes("cses")) {
+            return "Competitive Programming";
+        }
+
+        return null;
+
+    };
 
 
     // ============================================================
@@ -114,8 +152,7 @@ function CodingSheetsPage() {
 
         const matchesFilter =
             filter === "All" ||
-            sheet.category === filter ||
-            sheet.level === filter;
+            getSheetCategory(sheet) === filter;
 
         return (
             matchesSearch &&
