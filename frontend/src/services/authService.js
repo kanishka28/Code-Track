@@ -2,7 +2,7 @@ const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8080";
 const STORAGE_KEY = "codetrack_user";
 
 export async function loginOrSignup(email) {
-  const res = await fetch(`${API_BASE}/login`, {
+  const res = await fetch(`${API_BASE}/api/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),
