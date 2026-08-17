@@ -26,7 +26,7 @@ export default function LoginPage() {
 
     setStatus("checking");
     try {
-      const data = await login(email.trim());
+      await login(email.trim());
       setStatus("ok");
       // brief pause so the "authenticated" state is visible before navigating
       setTimeout(() => navigate("/"), 500);
