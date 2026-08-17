@@ -1,6 +1,6 @@
 import { getSessionToken } from "./authService";
 
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8080";
+const API_BASE = `${process.env.REACT_APP_API_URL || "http://localhost:8080"}/api/progress`;
 
 // problemType must be one of: "NEETCODE" | "CSES" | "STRIVER"
 // (NEETCODE covers both Neetcode 150 and Blind 75, since they share the same table)
