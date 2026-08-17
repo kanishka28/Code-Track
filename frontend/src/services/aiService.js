@@ -35,7 +35,7 @@ export const askCodeTrackBuddy = async ({
     try {
 
         const response = await fetch(
-            `${API_BASE_URL}/api/ai/assist`,
+            `${API_BASE}/api/ai/assist`,
             {
                 method: "POST",
 
