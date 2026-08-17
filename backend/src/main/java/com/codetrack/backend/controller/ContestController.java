@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contests")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class ContestController {
 
     private final ContestService contestService;

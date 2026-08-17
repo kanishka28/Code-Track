@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/sheets")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class StriverProblemController {
 
     private final StriverProblemService service;

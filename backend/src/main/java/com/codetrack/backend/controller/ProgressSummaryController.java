@@ -18,7 +18,7 @@
 
     @RestController
     @RequestMapping("/api/progress")
-    @CrossOrigin(origins = "http://localhost:3000")
+
     public class ProgressSummaryController {
 
         @Autowired private AuthService authService;

@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cses")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class CsesProblemController {
 
     private final CsesProblemService service;
